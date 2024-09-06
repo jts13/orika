@@ -24,7 +24,7 @@ import ma.glasnost.orika.PropertyNotFoundException;
 import ma.glasnost.orika.property.PropertyResolverStrategy;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
+import java.util.TreeSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -112,10 +112,10 @@ public class ClassMapBuilderForMaps<A, B> extends ClassMapBuilder<A,B> {
     	
     	Set<String> remainingProperties;
     	if (isATypeBean()) {
-            remainingProperties = new LinkedHashSet<>(getPropertiesForTypeA());
+            remainingProperties = new TreeSet<>(getPropertiesForTypeA());
             remainingProperties.removeAll(getMappedPropertiesForTypeA());
         } else {
-    	    remainingProperties = new LinkedHashSet<>(getPropertiesForTypeB());
+    	    remainingProperties = new TreeSet<>(getPropertiesForTypeB());
     	    remainingProperties.removeAll(getMappedPropertiesForTypeB());
     	}  
     	remainingProperties.remove("class");
