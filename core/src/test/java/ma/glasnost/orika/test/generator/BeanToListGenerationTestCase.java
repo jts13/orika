@@ -69,8 +69,8 @@ public class BeanToListGenerationTestCase {
 		Assert.assertEquals(student.grade.percentage, result.get(++index));
 		Assert.assertEquals(student.name.first, result.get(++index));
 		Assert.assertEquals(student.name.last, result.get(++index));
-		Assert.assertEquals(student.id, result.get(++index));
 		Assert.assertEquals(student.email, result.get(++index));
+		Assert.assertEquals(student.id, result.get(++index));
 		
 		
 		Student mapBack = mapper.map(result, Student.class);
